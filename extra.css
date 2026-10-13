@@ -1,0 +1,3 @@
+/* Optional styles for request cards; appended by main stylesheet in a future customization. */
+.request-list-card{border:1px solid #d9e6f8;border-radius:10px;padding:15px;margin:12px 0;background:#fbfdff}
+.request-list-card b{color:#06285f}.request-list-card span{float:right;background:#e4f4ed;color:#07804f;padding:4px 8px;border-radius:20px;font-size:11px}.request-list-card small{display:block;color:#71819a;margin-top:8px}.request-list-card p{font-size:13px;line-height:1.5;color:#50627f}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063b91">
+  <meta name="description" content="Mount Top — fast, secure and reliable digital services.">
+  <title>Mount Top | Digital Services</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./"><img src="assets/logo.svg" alt="" class="logo"><span>MOUNT <b>TOP</b><small>FAST · SECURE · RELIABLE</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#request">Send Request</a>
+    <a href="#wallet">Wallet</a><a href="#orders">My Requests</a>
+    <button class="nav-button" data-open-auth="login">Login</button>
+    <button class="nav-button primary" data-open-auth="signup">Sign Up</button>
+    <button id="logoutBtn" class="nav-button hidden">Log out</button>
+  </nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <span class="eyebrow">YOUR DIGITAL SERVICES PARTNER</span>
+    <h1>One place.<br><em>Everyday services.</em></h1>
+    <p>Fast, secure and reliable help with documents, identity services and professional design.</p>
+    <div class="hero-actions"><a class="btn yellow" href="#services">Explore Services →</a><button class="btn outline" data-open-auth="signup">Create an account</button></div>
+    <div class="trust-line"><span>✓ Secure requests</span><span>✓ Clear updates</span><span>✓ Friendly support</span></div>
+  </div>
+  <div class="hero-art"><div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="hero-badge"><img src="assets/logo.svg" alt="Mount Top logo"><b>Mount Top</b><small>Your success, our priority.</small></div><div class="floating-card">✦ <span>Services made simple</span></div></div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-heading"><div><span class="eyebrow blue">WHAT WE DO</span><h2>Our Services</h2><p>Choose a service and send your details securely.</p></div><span class="pill">Reliable · Professional</span></div>
+  <div class="service-grid">
+    <button class="service-card" data-service="Court Affidavit"><span class="service-icon blue-bg">▤</span><b>Court Affidavit</b><small>Assistance with affidavit requests and document preparation.</small><span class="card-link">Request service →</span></button>
+    <button class="service-card" data-service="NIN Services"><span class="service-icon green-bg">▣</span><b>NIN Services</b><small>Guidance for eligible NIN-related enquiries and support.</small><span class="card-link">Request service →</span></button>
+    <button class="service-card" data-service="Graphic Design"><span class="service-icon gold-bg">✎</span><b>Graphic Design</b><small>Flyers, logos, posters, branding and social media artwork.</small><span class="card-link">Request service →</span></button>
+    <button class="service-card" data-service="Document Services"><span class="service-icon blue-bg">▧</span><b>Document Services</b><small>Typing, formatting, printing preparation and document support.</small><span class="card-link">Request service →</span></button>
+    <button class="service-card" data-service="Business Support"><span class="service-icon green-bg">◇</span><b>Business Support</b><small>Help preparing business documents and basic digital materials.</small><span class="card-link">Request service →</span></button>
+    <button class="service-card" data-service="Other Enquiry"><span class="service-icon gold-bg">＋</span><b>Other Enquiry</b><small>Tell us what you need and our team will review it.</small><span class="card-link">Request service →</span></button>
+  </div>
+  <p class="notice">Mount Top is an independent service provider and does not represent NIMC or any court. Official services are subject to the relevant authority's rules and approval.</p>
+</section>
+
+<section class="request-section" id="request">
+  <aside class="request-aside"><span class="eyebrow">WE'RE HERE TO HELP</span><h2>Send your details</h2><p>Tell us what you need. Our team will review your request and contact you.</p><ul><li>✓ Private request submission</li><li>✓ File attachments supported</li><li>✓ Request tracking</li><li>✓ Helpful service updates</li></ul><div class="aside-mark"><img src="assets/logo.svg" alt="">Mount Top</div></aside>
+  <div class="request-panel">
+    <div class="tabs"><button class="tab active" data-tab="send">✉ Send Request</button><button class="tab" data-tab="track">◷ Track Requests</button></div>
+    <div id="sendPanel">
+      <div class="login-required" id="requestAuthNotice">Please <button class="inline-link" data-open-auth="login">log in</button> or <button class="inline-link" data-open-auth="signup">create an account</button> before sending a request.</div>
+      <form id="requestForm">
+        <div class="form-grid">
+          <label>Service type *<select id="serviceType" required><option value="">Select a service</option><option>Court Affidavit</option><option>NIN Services</option><option>Graphic Design</option><option>Document Services</option><option>Business Support</option><option>Other Enquiry</option></select></label>
+          <label>Full name *<input id="requestName" required maxlength="100" placeholder="Enter your full name"></label>
+          <label>Email address *<input id="requestEmail" type="email" required maxlength="254" placeholder="you@example.com"></label>
+          <label>Phone number *<input id="requestPhone" required type="tel" maxlength="20" placeholder="+234 ..."></label>
+          <label class="full">Additional details *<textarea id="requestDetails" required minlength="10" maxlength="4000" rows="5" placeholder="Describe what you need, the purpose, deadline, design size or other instructions. Do not include passwords, PINs or unnecessary sensitive information."></textarea></label>
+          <label class="full">Attach file (optional)<input id="requestFile" type="file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" ><small>JPG, PNG, PDF, DOC or DOCX. Maximum 10 MB.</small></label>
+        </div>
+        <div class="form-bottom"><p id="requestMessage" class="form-message" aria-live="polite"></p><button class="btn primary" type="submit">Send Request →</button></div>
+      </form>
+    </div>
+    <div id="trackPanel" class="hidden"><p class="muted">Your submitted requests will appear here after you log in.</p><div id="requestList"></div><button id="refreshRequests" class="btn outline-dark">Refresh requests</button></div>
+  </div>
+</section>
+
+<section class="wallet-section section" id="wallet">
+  <div class="section-heading"><div><span class="eyebrow blue">YOUR ACCOUNT</span><h2>Wallet & Payments</h2><p>Sign in to view your balance and fund your wallet.</p></div></div>
+  <div class="wallet-card"><div><span class="wallet-label">Available balance</span><h3 id="walletBalance">₦0.00</h3><p id="walletStatus">Sign in to access your wallet.</p></div><form id="depositForm"><label>Deposit amount (₦)<input id="depositAmount" type="number" min="100" max="1000000" step="1" required placeholder="e.g. 5000"></label><button class="btn yellow" type="submit">Fund Wallet securely →</button><small>Payments are processed through Paystack. Wallet credit is confirmed by the server, not your browser.</small></form></div>
+  <p class="notice">Wallet funding will remain unavailable until the Supabase database and secure Paystack Edge Functions in this package are configured and deployed.</p>
+</section>
+<section class="section how-section" id="orders"><span class="eyebrow blue">SIMPLE PROCESS</span><h2>How it works</h2><div class="steps"><div><b>01</b><h3>Create an account</h3><p>Register with your email and verify the one-time code.</p></div><div><b>02</b><h3>Send your request</h3><p>Choose a service and provide the relevant details or files.</p></div><div><b>03</b><h3>Track progress</h3><p>Review your submitted requests and contact support when needed.</p></div></div></section>
+</main>
+<footer><a class="brand footer-brand" href="./"><img src="assets/logo.svg" alt=""><span>MOUNT <b>TOP</b><small>FAST · SECURE · RELIABLE</small></span></a><div>About us · Services · Privacy · Terms</div><small>© <span id="year"></span> Mount Top. All rights reserved.</small></footer>
+
+<div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+ <div class="modal-card"><button class="modal-close" id="closeAuth" aria-label="Close">×</button><img class="auth-logo" src="assets/logo.svg" alt="Mount Top"><h2 id="authTitle">Welcome to Mount Top</h2><p id="authSubtitle">Sign in or create an account to continue.</p>
+  <div class="auth-switch"><button class="active" data-auth-mode="login">Login</button><button data-auth-mode="signup">Sign Up</button></div>
+  <form id="authForm"><label id="authNameWrap" class="hidden">Full name<input id="authName" autocomplete="name" maxlength="100" placeholder="Your full name"></label><label>Email address<input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label><label id="authPasswordWrap">Password<input id="authPassword" type="password" minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label><label id="authConfirmWrap" class="hidden">Confirm password<input id="authConfirm" type="password" minlength="8" placeholder="Repeat password"></label><button class="btn primary full-btn" type="submit" id="authSubmit">Continue</button></form>
+  <form id="otpForm" class="hidden"><p>Enter the verification code sent to your email.</p><label>6-digit email code<input id="otpCode" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" required placeholder="123456"></label><button class="btn primary full-btn" type="submit">Verify email</button></form>
+  <p id="authMessage" class="form-message" aria-live="polite"></p><small class="muted">Never share your password or verification code. If email confirmation is enabled, check your inbox and spam folder.</small>
+ </div>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+</body></html>

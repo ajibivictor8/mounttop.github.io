@@ -1,0 +1,1 @@
+Shared Edge Function notes: never deploy Paystack secret keys to browser code. Configure Supabase Edge Function secrets in the Supabase dashboard or CLI.
